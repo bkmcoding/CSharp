@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPRShoesStoreApp", "JPRShoesStoreApp.csproj", "{AFF95BD4-6808-4416-B3B3-2C9196615BFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFF95BD4-6808-4416-B3B3-2C9196615BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF95BD4-6808-4416-B3B3-2C9196615BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF95BD4-6808-4416-B3B3-2C9196615BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF95BD4-6808-4416-B3B3-2C9196615BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16DBC5AF-EF4A-4522-B3D6-D25C0C7505D9}
+	EndGlobalSection
+EndGlobal

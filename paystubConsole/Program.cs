@@ -100,10 +100,10 @@ namespace General
         
         static void DisplayEmployeeData(Employee employee)
         {
-            Console.WriteLine("First Name:" + employee.FirstName);
-            Console.WriteLine("Last Name:" + employee.LastName);
-            Console.WriteLine("Hourly Pay:" + employee.HourlyPay);
-            Console.WriteLine("Hours Worked:" + employee.HoursWorked);
+            Console.WriteLine("First Name: " + employee.FirstName);
+            Console.WriteLine("Last Name: " + employee.LastName);
+            Console.WriteLine("Hourly Pay: " + employee.HourlyPay);
+            Console.WriteLine("Hours Worked: " + employee.HoursWorked);
             Console.WriteLine("Wage: " + employee.Wage);
             Console.WriteLine("Overtime: " + employee.Overtime);
         }
@@ -120,8 +120,8 @@ namespace General
         public string? LastName { get; set; } = null;
         public double HourlyPay { get; set; }
         public int HoursWorked { get; set; }
-        public double Wage { get; set; }
-        public double Overtime { get; set; }
+        public float Wage { get; set; }
+        public float Overtime { get; set; }
 
 
         public void getData()
