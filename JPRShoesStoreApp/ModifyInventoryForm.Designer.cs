@@ -1,6 +1,6 @@
 ﻿namespace JPRShoesStoreApp
 {
-    partial class AddInventory
+    partial class ModifyInventoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -53,7 +53,7 @@
             AddItemButton.Name = "AddItemButton";
             AddItemButton.Size = new Size(285, 48);
             AddItemButton.TabIndex = 1;
-            AddItemButton.Text = "Add Item";
+            AddItemButton.Text = "Confirm";
             AddItemButton.UseVisualStyleBackColor = true;
             AddItemButton.Click += AddItemButton_Click;
             // 
@@ -95,7 +95,7 @@
             ItemQuantity.Size = new Size(235, 23);
             ItemQuantity.TabIndex = 5;
             // 
-            // AddInventory
+            // ModifyInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -106,8 +106,8 @@
             Controls.Add(ExitButton);
             Controls.Add(AddItemButton);
             Controls.Add(InventoryItemBox);
-            Name = "AddInventory";
-            Text = "Add Inventory";
+            Name = "ModifyInventory";
+            Text = "Modify Inventory";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -12,7 +12,7 @@ namespace JPRShoesStoreApp
 {
     public partial class Form1 : System.Windows.Forms.Form
     {
-        public AddInventory Add { get; set; }
+        public ModifyInventoryForm Add { get; set; }
         public Dictionary<string, Item> Inventory { get; set; }
 
         private string? FileName { get; set; } = null;
@@ -21,7 +21,7 @@ namespace JPRShoesStoreApp
         {
             InitializeComponent();
             Inventory = new Dictionary<string, Item>();
-            Add = new AddInventory();
+            Add = new ModifyInventoryForm();
             Add.Hide();
         }
 
@@ -68,7 +68,6 @@ namespace JPRShoesStoreApp
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Inventory.Clear();
             OpenFileDialog fileExplorer = new OpenFileDialog
             {
                 Title = "Browse Text Files",
@@ -83,6 +82,7 @@ namespace JPRShoesStoreApp
             };
             fileExplorer.ShowDialog();
             if (!fileExplorer.CheckFileExists) return;
+            Inventory.Clear();
             FileName = fileExplorer.FileName;
             using StreamReader dataFile = new StreamReader(fileExplorer.FileName);
             List<string[]> dataList = [];
@@ -97,6 +97,8 @@ namespace JPRShoesStoreApp
                 string keyName = row[1];
                 Inventory.Add(keyName, new Item(Convert.ToInt64(row[0]), row[1], Convert.ToInt64(row[2]), Convert.ToDouble(row[3])));
             }
+
+            InventoryGridView.Rows.Clear();
             this.LoadInventory();
             Add.GetInventoryItems(Inventory.Keys);
         }
@@ -110,7 +112,7 @@ namespace JPRShoesStoreApp
             else
             {
                 StringBuilder csvData = new StringBuilder();
-                string Separator = ",";
+                const string separator = ",";
                 foreach (var item in Inventory)
                 {
                     string[] prop = item.Value.GetProperties();
@@ -120,9 +122,9 @@ namespace JPRShoesStoreApp
                         itemData.Add(prop[i]);
                     }
 
-                    csvData.AppendLine(string.Join(Separator, itemData));
+                    csvData.AppendLine(string.Join(separator, itemData));
                 }
-                File.AppendAllText(FileName,csvData.ToString());
+                File.WriteAllText(FileName, csvData.ToString());
             }
         }
     }

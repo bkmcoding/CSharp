@@ -11,12 +11,12 @@ using System.Windows.Forms.VisualStyles;
 
 namespace JPRShoesStoreApp
 {
-    public partial class AddInventory : Form
+    public partial class ModifyInventoryForm : Form
     {
         public List<string[]> InventoryChange { get; set; }
         public string ItemName { get; set; }
         public int Quantity { get; set; }
-        public AddInventory()
+        public ModifyInventoryForm()
         {
             InventoryChange = new List<string[]>();
             InitializeComponent();
