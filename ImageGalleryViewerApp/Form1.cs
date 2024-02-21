@@ -34,7 +34,7 @@ namespace ImageGalleryViewer
         }
         private void leftButton_Click(object sender, EventArgs e)
         {
-            if (GalleryIndex == -1)
+            if (GalleryIndex - 1 == 0)
             {
                 MessageBox.Show("Cannot navigate lower than index 0", "User Error");
             }
@@ -47,7 +47,7 @@ namespace ImageGalleryViewer
         }
         private void rightButton_Click(object sender, EventArgs e)
         {
-            if (GalleryIndex - 1 <= ImageGallery.Images.Count)
+            if (GalleryIndex - 1 < ImageGallery.Images.Count)
             {
                 GalleryIndex++;
                 LoadImage();
