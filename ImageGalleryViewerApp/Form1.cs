@@ -29,16 +29,13 @@ namespace ImageGalleryViewer
         }
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ImageGallery.Images.RemoveAt(GalleryIndex);
+            ImageGallery.Images.RemoveAt(GalleryIndex - 1);
+            GalleryIndex--;
             LoadImage();
         }
         private void leftButton_Click(object sender, EventArgs e)
         {
-            if (GalleryIndex - 1 == 0)
-            {
-                MessageBox.Show("Cannot navigate lower than index 0", "User Error");
-            }
-            else
+            if (GalleryIndex - 1 != 0)
             {
                 GalleryIndex--;
                 LoadImage();
@@ -47,7 +44,7 @@ namespace ImageGalleryViewer
         }
         private void rightButton_Click(object sender, EventArgs e)
         {
-            if (GalleryIndex - 1 < ImageGallery.Images.Count)
+            if (GalleryIndex < ImageGallery.Images.Count)
             {
                 GalleryIndex++;
                 LoadImage();
@@ -59,6 +56,7 @@ namespace ImageGalleryViewer
         {
             ImageBox.Image = ImageGallery.Images[GalleryIndex - 1];
             IndexLabel.Text = Convert.ToString(GalleryIndex);
+
         }
 
         

@@ -116,7 +116,7 @@
             // 
             IndexLabel.AutoSize = true;
             IndexLabel.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            IndexLabel.Location = new Point(218, 47);
+            IndexLabel.Location = new Point(214, 47);
             IndexLabel.Name = "IndexLabel";
             IndexLabel.Size = new Size(20, 23);
             IndexLabel.TabIndex = 4;

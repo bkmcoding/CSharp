@@ -47,16 +47,18 @@ namespace CS_REG_98_7654_3210
             {
                 for (int index = 0; index < difference; index++)
                 {
-                    result /= 1024;
+                    result *= 1024;
                 }
             } 
             if (difference < 0)
             {
                 for (int index = 0; index > difference; index--)
                 {
-                    result *= 1024;
+                    result /= 1024;
                 }
             }
+
+            result = Math.Round(result, 15);
 
             return result;
 

@@ -34,6 +34,9 @@ namespace CS_REG_98_7654_3210
             {
                 errors[0] = true;
             }
+
+            // Loops through each input that needs to be checked for the purpose of
+            // error management
             foreach (bool rd in ConvertFromRb)
             {
                 if (rd)
@@ -57,6 +60,8 @@ namespace CS_REG_98_7654_3210
                     errorMessage += errorStatements[index] + "\n";
                 }
             }
+            // if there is any error an error message will pop up
+            // if not then the byte conversion will be calculated and displayed
             if (error)
             {
                 MessageBox.Show(errorMessage,"Input Error");
