@@ -34,6 +34,9 @@
             BackButton = new Button();
             label1 = new Label();
             TimeLimitLabel = new Label();
+            ShootTime = new TextBox();
+            MissLimit = new TextBox();
+            TimeLimit = new TextBox();
             SuspendLayout();
             // 
             // ShootTimeLabel
@@ -57,6 +60,7 @@
             SaveButton.TabIndex = 1;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Click += SaveButton_Click;
             // 
             // BackButton
             // 
@@ -74,7 +78,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Bahnschrift SemiCondensed", 14.25F, FontStyle.Bold);
-            label1.Location = new Point(35, 110);
+            label1.Location = new Point(35, 130);
             label1.Name = "label1";
             label1.Size = new Size(84, 23);
             label1.TabIndex = 3;
@@ -85,11 +89,32 @@
             TimeLimitLabel.AutoSize = true;
             TimeLimitLabel.BackColor = Color.Transparent;
             TimeLimitLabel.Font = new Font("Bahnschrift SemiCondensed", 14.25F, FontStyle.Bold);
-            TimeLimitLabel.Location = new Point(35, 160);
+            TimeLimitLabel.Location = new Point(35, 200);
             TimeLimitLabel.Name = "TimeLimitLabel";
             TimeLimitLabel.Size = new Size(110, 23);
             TimeLimitLabel.TabIndex = 4;
             TimeLimitLabel.Text = "Time Limit (S)";
+            // 
+            // ShootTime
+            // 
+            ShootTime.Location = new Point(200, 60);
+            ShootTime.Name = "ShootTime";
+            ShootTime.Size = new Size(148, 23);
+            ShootTime.TabIndex = 5;
+            // 
+            // MissLimit
+            // 
+            MissLimit.Location = new Point(200, 130);
+            MissLimit.Name = "MissLimit";
+            MissLimit.Size = new Size(148, 23);
+            MissLimit.TabIndex = 6;
+            // 
+            // TimeLimit
+            // 
+            TimeLimit.Location = new Point(200, 204);
+            TimeLimit.Name = "TimeLimit";
+            TimeLimit.Size = new Size(148, 23);
+            TimeLimit.TabIndex = 7;
             // 
             // Settings
             // 
@@ -97,6 +122,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
+            Controls.Add(TimeLimit);
+            Controls.Add(MissLimit);
+            Controls.Add(ShootTime);
             Controls.Add(TimeLimitLabel);
             Controls.Add(label1);
             Controls.Add(BackButton);
@@ -115,5 +143,8 @@
         private Button BackButton;
         private Label label1;
         private Label TimeLimitLabel;
+        private TextBox ShootTime;
+        private TextBox MissLimit;
+        private TextBox TimeLimit;
     }
 }
