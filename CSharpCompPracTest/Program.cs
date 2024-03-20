@@ -21,17 +21,6 @@ internal static class Program
             var values = line?.Split(",");
             if (values != null) productList.Add(values);
         }
-
-        foreach (var product in vendorsList)
-        {
-            foreach (var item in product)
-            {
-                Console.Write(item);
-            }
-            Console.WriteLine();
-        }
-        
-
         for (int i = 0; i < vendorsList.Count; i++)
         {
             for (int j = 0; j < vendorsList[i].Length; j++)

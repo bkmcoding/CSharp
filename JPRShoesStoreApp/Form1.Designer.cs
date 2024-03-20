@@ -35,7 +35,7 @@
             Quantity = new DataGridViewTextBoxColumn();
             ListPrice = new DataGridViewTextBoxColumn();
             RetailPrice = new DataGridViewTextBoxColumn();
-            AddInventoryButton = new Button();
+            ModifyInventoryButton = new Button();
             RefreshInventoryButton = new Button();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
@@ -103,16 +103,16 @@
             RetailPrice.Name = "RetailPrice";
             RetailPrice.ReadOnly = true;
             // 
-            // AddInventoryButton
+            // ModifyInventoryButton
             // 
-            AddInventoryButton.Font = new Font("Tahoma", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AddInventoryButton.Location = new Point(57, 347);
-            AddInventoryButton.Name = "AddInventoryButton";
-            AddInventoryButton.Size = new Size(269, 79);
-            AddInventoryButton.TabIndex = 2;
-            AddInventoryButton.Text = "Add Inventory";
-            AddInventoryButton.UseVisualStyleBackColor = true;
-            AddInventoryButton.Click += AddInventoryButton_Click;
+            ModifyInventoryButton.Font = new Font("Tahoma", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ModifyInventoryButton.Location = new Point(57, 347);
+            ModifyInventoryButton.Name = "ModifyInventoryButton";
+            ModifyInventoryButton.Size = new Size(269, 79);
+            ModifyInventoryButton.TabIndex = 2;
+            ModifyInventoryButton.Text = "Modify Inventory";
+            ModifyInventoryButton.UseVisualStyleBackColor = true;
+            ModifyInventoryButton.Click += AddInventoryButton_Click;
             // 
             // RefreshInventoryButton
             // 
@@ -161,7 +161,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(RefreshInventoryButton);
-            Controls.Add(AddInventoryButton);
+            Controls.Add(ModifyInventoryButton);
             Controls.Add(InventoryGridView);
             Controls.Add(MainLabel);
             Controls.Add(menuStrip1);
@@ -180,7 +180,7 @@
 
         private Label MainLabel;
         private DataGridView InventoryGridView;
-        private Button AddInventoryButton;
+        private Button ModifyInventoryButton;
         private Button RefreshInventoryButton;
         private DataGridViewTextBoxColumn UPC;
         private DataGridViewTextBoxColumn ItemDesc;
