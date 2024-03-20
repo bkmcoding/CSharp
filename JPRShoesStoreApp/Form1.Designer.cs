@@ -168,6 +168,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "JPRAccounting";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)InventoryGridView).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

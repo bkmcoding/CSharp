@@ -122,8 +122,13 @@ namespace JPRShoesStoreApp
 
                     csvData.AppendLine(string.Join(Separator, itemData));
                 }
-                File.AppendAllText(FileName,csvData.ToString());
+                File.AppendAllText(FileName, csvData.ToString());
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
