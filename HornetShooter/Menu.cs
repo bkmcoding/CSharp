@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C_MoleShooterApp.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,28 +11,31 @@ using System.Windows.Forms;
 
 namespace HornetShooter
 {
-    public partial class Menu : Form
+    public partial class Menu : UserControl
     {
+
         public Menu()
         {
             InitializeComponent();
+            SettingsMenu.Hide();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            Game game = new Game();
+            Game game = new Game(SettingsMenu.ShootTimeMs, SettingsMenu.MissLimitNum, SettingsMenu.TimeLimitS, SettingsMenu.TargetSizePx);
             game.Show();
-            this.Hide();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Form? tmp = this.FindForm();
+            tmp.Close();
+            tmp.Dispose();
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-
+            SettingsMenu.Show();
         }
     }
 }

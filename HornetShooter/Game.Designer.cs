@@ -34,19 +34,23 @@
             ScoreLabel = new Label();
             MissShotLabel = new Label();
             TotalShotLabel = new Label();
-            Timer = new System.Windows.Forms.Timer(components);
+            GameInterval = new System.Windows.Forms.Timer(components);
             ExitButton = new Button();
             RestartButton = new Button();
             GameOverLabel = new Label();
+            Timer = new System.Windows.Forms.Timer(components);
+            CurrentTimeLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)Enemy).BeginInit();
             SuspendLayout();
             // 
             // Enemy
             // 
+            Enemy.BackColor = Color.Transparent;
+            Enemy.BackgroundImageLayout = ImageLayout.None;
             Enemy.Image = (Image)resources.GetObject("Enemy.Image");
             Enemy.Location = new Point(682, 239);
             Enemy.Name = "Enemy";
-            Enemy.Size = new Size(50, 50);
+            Enemy.Size = new Size(60, 60);
             Enemy.SizeMode = PictureBoxSizeMode.StretchImage;
             Enemy.TabIndex = 0;
             Enemy.TabStop = false;
@@ -85,11 +89,11 @@
             TotalShotLabel.TabIndex = 3;
             TotalShotLabel.Text = "Total Shots=0";
             // 
-            // Timer
+            // GameInterval
             // 
-            Timer.Enabled = true;
-            Timer.Interval = 500;
-            Timer.Tick += Timer_Tick;
+            GameInterval.Enabled = true;
+            GameInterval.Interval = 500;
+            GameInterval.Tick += Game_Interval_Tick;
             // 
             // ExitButton
             // 
@@ -124,6 +128,24 @@
             GameOverLabel.Name = "GameOverLabel";
             GameOverLabel.Size = new Size(0, 58);
             GameOverLabel.TabIndex = 8;
+            GameOverLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Timer
+            // 
+            Timer.Enabled = true;
+            Timer.Interval = 1000;
+            Timer.Tick += Timer_Tick;
+            // 
+            // CurrentTimeLabel
+            // 
+            CurrentTimeLabel.AutoSize = true;
+            CurrentTimeLabel.BackColor = Color.Transparent;
+            CurrentTimeLabel.Font = new Font("Bahnschrift SemiBold", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CurrentTimeLabel.Location = new Point(383, 9);
+            CurrentTimeLabel.Name = "CurrentTimeLabel";
+            CurrentTimeLabel.Size = new Size(104, 45);
+            CurrentTimeLabel.TabIndex = 9;
+            CurrentTimeLabel.Text = "00:00";
             // 
             // Game
             // 
@@ -132,6 +154,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(859, 461);
+            Controls.Add(CurrentTimeLabel);
             Controls.Add(GameOverLabel);
             Controls.Add(RestartButton);
             Controls.Add(ExitButton);
@@ -156,9 +179,11 @@
         private Label ScoreLabel;
         private Label MissShotLabel;
         private Label TotalShotLabel;
-        private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Timer GameInterval;
         private Button ExitButton;
         private Button RestartButton;
         private Label GameOverLabel;
+        private System.Windows.Forms.Timer Timer;
+        private Label CurrentTimeLabel;
     }
 }
