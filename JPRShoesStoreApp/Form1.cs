@@ -127,5 +127,10 @@ namespace JPRShoesStoreApp
                 File.WriteAllText(FileName, csvData.ToString());
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
