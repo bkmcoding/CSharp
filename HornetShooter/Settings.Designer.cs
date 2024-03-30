@@ -1,6 +1,6 @@
-﻿namespace C_MoleShooterApp
+﻿namespace HornetShooter
 {
-    partial class Settings
+    partial class SettingsMenu
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsMenu));
             ShootTimeLabel = new Label();
             SaveButton = new Button();
             BackButton = new Button();
@@ -37,6 +37,8 @@
             ShootTime = new TextBox();
             MissLimit = new TextBox();
             TimeLimit = new TextBox();
+            TargetSize = new TextBox();
+            TargetSizeLabel = new Label();
             SuspendLayout();
             // 
             // ShootTimeLabel
@@ -72,13 +74,14 @@
             BackButton.TabIndex = 2;
             BackButton.Text = "Back";
             BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Bahnschrift SemiCondensed", 14.25F, FontStyle.Bold);
-            label1.Location = new Point(35, 130);
+            label1.Location = new Point(35, 114);
             label1.Name = "label1";
             label1.Size = new Size(84, 23);
             label1.TabIndex = 3;
@@ -89,7 +92,7 @@
             TimeLimitLabel.AutoSize = true;
             TimeLimitLabel.BackColor = Color.Transparent;
             TimeLimitLabel.Font = new Font("Bahnschrift SemiCondensed", 14.25F, FontStyle.Bold);
-            TimeLimitLabel.Location = new Point(35, 200);
+            TimeLimitLabel.Location = new Point(35, 169);
             TimeLimitLabel.Name = "TimeLimitLabel";
             TimeLimitLabel.Size = new Size(110, 23);
             TimeLimitLabel.TabIndex = 4;
@@ -104,24 +107,44 @@
             // 
             // MissLimit
             // 
-            MissLimit.Location = new Point(200, 130);
+            MissLimit.Location = new Point(200, 114);
             MissLimit.Name = "MissLimit";
             MissLimit.Size = new Size(148, 23);
             MissLimit.TabIndex = 6;
             // 
             // TimeLimit
             // 
-            TimeLimit.Location = new Point(200, 204);
+            TimeLimit.Location = new Point(200, 173);
             TimeLimit.Name = "TimeLimit";
             TimeLimit.Size = new Size(148, 23);
             TimeLimit.TabIndex = 7;
             // 
-            // Settings
+            // TargetSize
+            // 
+            TargetSize.Location = new Point(200, 228);
+            TargetSize.Name = "TargetSize";
+            TargetSize.Size = new Size(148, 23);
+            TargetSize.TabIndex = 9;
+            // 
+            // TargetSizeLabel
+            // 
+            TargetSizeLabel.AutoSize = true;
+            TargetSizeLabel.BackColor = Color.Transparent;
+            TargetSizeLabel.Font = new Font("Bahnschrift SemiCondensed", 14.25F, FontStyle.Bold);
+            TargetSizeLabel.Location = new Point(35, 224);
+            TargetSizeLabel.Name = "TargetSizeLabel";
+            TargetSizeLabel.Size = new Size(125, 23);
+            TargetSizeLabel.TabIndex = 8;
+            TargetSizeLabel.Text = "Target Size (PX)";
+            // 
+            // SettingsMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
+            Controls.Add(TargetSize);
+            Controls.Add(TargetSizeLabel);
             Controls.Add(TimeLimit);
             Controls.Add(MissLimit);
             Controls.Add(ShootTime);
@@ -130,7 +153,7 @@
             Controls.Add(BackButton);
             Controls.Add(SaveButton);
             Controls.Add(ShootTimeLabel);
-            Name = "Settings";
+            Name = "SettingsMenu";
             Size = new Size(400, 400);
             ResumeLayout(false);
             PerformLayout();
@@ -146,5 +169,7 @@
         private TextBox ShootTime;
         private TextBox MissLimit;
         private TextBox TimeLimit;
+        private TextBox TargetSize;
+        private Label TargetSizeLabel;
     }
 }

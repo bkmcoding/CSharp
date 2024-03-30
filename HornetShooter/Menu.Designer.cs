@@ -2,12 +2,12 @@
 {
     partial class Menu
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -33,6 +33,7 @@
             StartButton = new Button();
             ExitButton = new Button();
             SettingsButton = new Button();
+            SettingsMenu = new SettingsMenu();
             SuspendLayout();
             // 
             // MenuLabel
@@ -85,29 +86,38 @@
             SettingsButton.UseVisualStyleBackColor = false;
             SettingsButton.Click += SettingsButton_Click;
             // 
+            // SettingsMenu
+            // 
+            SettingsMenu.BackgroundImage = (Image)resources.GetObject("SettingsMenu.BackgroundImage");
+            SettingsMenu.BackgroundImageLayout = ImageLayout.None;
+            SettingsMenu.Location = new Point(3, 3);
+            SettingsMenu.Name = "SettingsMenu";
+            SettingsMenu.Size = new Size(400, 400);
+            SettingsMenu.TabIndex = 4;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(384, 396);
+            Controls.Add(SettingsMenu);
             Controls.Add(SettingsButton);
             Controls.Add(ExitButton);
             Controls.Add(StartButton);
             Controls.Add(MenuLabel);
-            MaximizeBox = false;
             Name = "Menu";
-            Text = "Menu";
+            Size = new Size(384, 396);
             ResumeLayout(false);
             PerformLayout();
         }
 
-        #endregion
+        #endregion\
 
         private Label MenuLabel;
         private Button StartButton;
         private Button ExitButton;
         private Button SettingsButton;
+        private SettingsMenu settings1;
+        private SettingsMenu SettingsMenu;
     }
 }

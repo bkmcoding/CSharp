@@ -8,33 +8,54 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C_MoleShooterApp
+namespace HornetShooter
 {
-    public partial class Settings : UserControl
+
+    public partial class SettingsMenu : UserControl
     {
-        private int ShootTimeMS = 500;
-        private int MissLimitNum = 500;
-        private int TimeLimitS = 0;
-        public Settings()
+        public int ShootTimeMs { get; private set; } = 500;
+        public int MissLimitNum { get; private set; } = 10;
+        public int TimeLimitS { get; private set; } = 0;
+        public int TargetSizePx { get; private set; } = 60;
+        public SettingsMenu()
         {
             InitializeComponent();
+            ShootTime.Text = ShootTimeMs.ToString();
+            MissLimit.Text = MissLimitNum.ToString();
+            TimeLimit.Text = TimeLimitS.ToString();
+            TargetSize.Text = TargetSizePx.ToString();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            while (true)
+            bool error = false;
+            try
             {
-                try
-                {
-                    ShootTimeMS = Convert.ToInt32(ShootTime.Text);
-                    MissLimitNum = Convert.ToInt32(MissLimit.Text);
-                    TimeLimitS = Convert.ToInt32(TimeLimit.Text);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("User Error", "Please enter a valid input for the settings");
-                }
+                ShootTimeMs = Convert.ToInt32(ShootTime.Text);
+                MissLimitNum = Convert.ToInt32(MissLimit.Text);
+                TimeLimitS = Convert.ToInt32(TimeLimit.Text);
+                TargetSizePx = Convert.ToInt32(TargetSize.Text);
             }
+            catch (Exception)
+            {
+                error = true;
+                MessageBox.Show("User Error", "Please enter a valid input for the settings");
+            }
+
+            if (!error)
+            {
+                ShootTime.Text = ShootTimeMs.ToString();
+                MissLimit.Text = MissLimitNum.ToString();
+                TimeLimit.Text = TimeLimitS.ToString();
+                TargetSize.Text = TargetSizePx.ToString();
+            }
+
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-namespace HornetShooter
+namespace HornetShooterN
 {
     internal static class Program
     {
