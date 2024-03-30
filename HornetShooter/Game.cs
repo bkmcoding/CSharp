@@ -20,7 +20,7 @@ namespace HornetShooter
             SoundPlayer? player = null;
             if (soundEffect == "shot")
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\mhannan\Downloads\laserShoot.wav");
+                player = new System.Media.SoundPlayer(@"G:\Downloads\laser.wav");
 
             }
 
@@ -29,7 +29,7 @@ namespace HornetShooter
 
         private void fn_shot()
         {
-            Score++;
+            Score += 9876;
             ScoreLabel.Text = "Score=" + Score;
             TotalShots++;
             TotalShotLabel.Text = "Total Shots=" + TotalShots;
