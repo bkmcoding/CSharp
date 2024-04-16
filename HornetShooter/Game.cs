@@ -35,14 +35,6 @@ namespace HornetShooter
 
         private void sound_fx(string soundEffect)
         {
-            SoundPlayer? player = null;
-            if (soundEffect == "shot")
-            {
-                player = new System.Media.SoundPlayer(@"G:\Downloads\laser.wav");
-
-            }
-
-            if (player != null) player.Play();
         }
 
         private void fn_shot()
