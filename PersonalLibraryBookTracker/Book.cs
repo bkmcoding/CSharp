@@ -10,6 +10,15 @@ namespace PersonalLibraryBookTracker
     internal class Book
     {
 
+        public Book(int iSBN, string title, string author, string description, float price)
+        {
+            this.ISBN = iSBN;
+            this.Title = title;
+            this.Author = author;
+            this.Description = description;
+            this.Price = price;
+        }
+
         public int ISBN { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
